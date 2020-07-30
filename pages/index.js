@@ -1,65 +1,26 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+// UI elements
+import Button from 'react-bootstrap/Button'
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+    <main>
+      <Jumbotron className="text-center bg-transparent pt-1" style={{letterSpacing: "1px"}}>
+        <img src="iconshock/money_bag.svg" alt="Money bag" width="140px" className="mb-3"/>
+        <h1>Sell your music on the decentralized web and keep 100% of the cut.</h1>
+        <br/>
+        <p className="lead"><b>ETH Music Market</b> is a simple but robust{' '}
+          <OverlayTrigger overlay={
+            <Tooltip>Decentralized application (DApp): An application with a distributed or peer-to-peer backend, e.g. BitTorrent, Bitcoin, Ethereum</Tooltip>
+          }>
+            <span className="d-inline-block">DApp<sup>[?]</sup></span>
+          </OverlayTrigger> for selling and buying audio files for cryptocurrencies using the <a href="https://ethereum.org/en/">Ethereum</a> network and <a href="https://ipfs.io/">IPFS</a>. All your files are hosted on a peer-to-peer database and all payments go straight to your wallet, so you are in complete control of your data and funds. No sign-up necessary—all you need is a digital wallet to sell or buy songs.</p>
+        <br/>
+        <a href="/about"><Button variant="primary">Read more</Button></a>{' '}
+        <a href="/dashboard"><Button variant="success">Try it out</Button></a>
+      </Jumbotron>
+    </main>
   )
 }
