@@ -17,7 +17,10 @@ describe('Dashboard Page Component', () => {
   })
   
   it('should have three tabs', () => {
+    const { getAllByTestId } = render(<Dashboard />)
+    const tabs = getAllByTestId('tab')
     
+    expect(tabs).toHaveLength(3)
   })
   
 })
