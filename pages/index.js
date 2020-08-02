@@ -7,11 +7,11 @@ import Tooltip from 'react-bootstrap/Tooltip'
 export default function Home() {
   return (
     <main>
-      <Jumbotron className="text-center bg-transparent pt-1" style={{letterSpacing: "1px"}}>
+      <Jumbotron className="text-center bg-transparent pt-1">
         <img src="iconshock/money_bag.svg" alt="Money bag" width="140px" className="mb-3"/>
-        <h1>Sell your music on the decentralized web and keep 100% of the cut.</h1>
+        <h1 style={{letterSpacing: "1px"}}>Sell your music on the decentralized web and keep 100% of the cut.</h1>
         <br/>
-        <p className="lead"><b>ETH Music Market</b> is a simple but robust{' '}
+        <p><b>ETH Music Market</b> is a simple but robust{' '}
           <OverlayTrigger overlay={
             <Tooltip>Decentralized application (DApp): An application with a distributed or peer-to-peer backend, e.g. BitTorrent, Bitcoin, Ethereum</Tooltip>
           }>
