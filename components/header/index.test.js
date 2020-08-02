@@ -1,4 +1,4 @@
-import Header from './header'
+import Header from '.'
 import { render, screen } from '@testing-library/react'
 
 // UI elements

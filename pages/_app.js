@@ -5,7 +5,7 @@ import '../styles/globals.css'
 import { GlobalContextProvider } from '../state/global.js';
 
 // Components
-import Header from '../components/header.js'
+import Header from '../components/header'
 
 // UI elements
 import Container from 'react-bootstrap/Container'
