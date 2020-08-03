@@ -1,4 +1,5 @@
-import Head from 'next/head'
+// Components
+import Upload from '../components/upload'
 
 // UI elements
 import Tabs from "react-bootstrap/Tabs";
@@ -14,7 +15,7 @@ export default function Dashboard() {
         </Tab>
         <Tab data-testid="tab" eventKey="upload" title="Upload new release">
           <br/>
-          <p>Tab 2</p>
+          <Upload />
         </Tab>
         <Tab data-testid="tab" eventKey="myreleases" title="My releases">
           <br/>
