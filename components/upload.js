@@ -12,6 +12,8 @@ import Modal from 'react-bootstrap/Modal';
 import Spinner from 'react-bootstrap/Spinner';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 
+import { apiKeys } from "../api-keys"
+
 // import Dropzone from "react-dropzone";
 
 export default function Upload() {
