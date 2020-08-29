@@ -142,13 +142,24 @@ export default function Upload() {
     services: {
       submit: (_ctx, _evt) =>
         new Promise(async (resolve, reject) => {
-          const uploadedFile = await fleekStorage.upload({
+          const coverArtIPFS = await fleekStorage.upload({
             apiKey: apiKeys.fleekKey,
             apiSecret: apiKeys.fleekSecret,
             key: 'my-file-key',
             data: current.context.coverArt,
           })
-          console.log(uploadedFile)
+          
+          console.log(coverArtIPFS)
+          
+          let metadata = {
+            coverArt: {
+              hash: coverArtIPFS.hash,
+              url: coverArtIPFS.publicUrl
+            }
+          }
+          
+          console.log(JSON.stringify(metadata))
+            
         }
     )}
   });
@@ -239,9 +250,11 @@ export default function Upload() {
       <Row>
         <Col className="my-auto">
           <div className="d-flex justify-content-center">
-            <Button variant="secondary" size="sm">
-              Upload art
-            </Button>
+            <Form.File
+              label="Upload art..."
+              custom
+              onChange={handleCoverArtChange}
+            />
           </div>
           <br/>
         </Col>
@@ -332,6 +345,35 @@ export default function Upload() {
           modified.
         </p>
       </div>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        data-testid="modal"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Uploading release...</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {current.context.releaseName}
+          <Spinner animation="border" role="status">
+            <span className="sr-only">Loading...</span>
+          </Spinner>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            variant="secondary"
+            onClick={handleClose}
+          >
+            Close
+          </Button>
+          <Button
+            variant="primary"
+            onClick={handleClose}
+          >
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </form>
   )
 }
